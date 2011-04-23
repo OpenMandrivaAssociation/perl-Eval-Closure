@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 1
+Release:	%mkrel 2
 Summary:	Safely and cleanly create closures via string eval
 License:	GPL+ or Artistic
 Group:		Development/Perl
@@ -12,7 +12,6 @@ Source0:	http://search.cpan.org/CPAN/authors/id/D/DO/DOY/%{upstream_name}-%{upst
 BuildRequires:	perl(Sub::Exporter)
 BuildRequires:	perl(Test::Fatal)
 BuildRequires:	perl(Test::Requires)
-BuildArch:	noarch
 
 %description
 String eval is often used for dynamic code generation. For instance, Moose uses it heavily, to generate inlined versions of accessors and constructors, which speeds code up at runtime by a significant amount. String eval is not without its issues however - it's difficult to control the scope it's used in (which determines which variables are in scope inside the eval), and it can be quite slow, especially if doing a large number of evals.
