@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 5
+Release:	6
 Summary:	Safely and cleanly create closures via string eval
 License:	GPL+ or Artistic
 Group:		Development/Perl
@@ -12,6 +12,7 @@ Source0:	http://search.cpan.org/CPAN/authors/id/D/DO/DOY/%{upstream_name}-%{upst
 BuildRequires:	perl(Sub::Exporter)
 BuildRequires:	perl(Test::Fatal)
 BuildRequires:	perl(Test::Requires)
+BuildRequires:	perl-devel
 BuildArch:	noarch
 
 %description
@@ -34,7 +35,7 @@ is to work properly).
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+%__perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
@@ -43,11 +44,29 @@ make test
 %install
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc LICENSE MANIFEST README Changes
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
+
+
+%changelog
+* Tue Jan 24 2012 Oden Eriksson <oeriksson@mandriva.com> 0.40.0-5mdv2012.0
++ Revision: 767797
+- fix stupid and anal rpmlint enforcements that does not even show in the build system output.
+- rebuilt for perl-5.14.2
+- rebuilt for perl-5.14.x
+
+* Sat Apr 23 2011 Sandro Cazzaniga <kharec@mandriva.org> 0.40.0-3
++ Revision: 657320
+- bump rel
+- re-add buildarch
+
+* Sat Apr 23 2011 Sandro Cazzaniga <kharec@mandriva.org> 0.40.0-2
++ Revision: 657314
+- drop noarch tag
+
+* Sat Apr 23 2011 Sandro Cazzaniga <kharec@mandriva.org> 0.40.0-1
++ Revision: 657174
+- import perl-Eval-Closure
+
