@@ -1,14 +1,14 @@
-%define upstream_name    Eval-Closure
-%define upstream_version 0.04
+%define	modname	Eval-Closure
+%define	modver	0.08
 
-Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	6
+Name:		perl-%{modname}
+Version:	%{perl_convert_version %{modver}}
+Release:	1
 Summary:	Safely and cleanly create closures via string eval
 License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/~doy/Eval-Closure-0.04/lib/Eval/Closure.pm
-Source0:	http://search.cpan.org/CPAN/authors/id/D/DO/DOY/%{upstream_name}-%{upstream_version}.tar.gz
+URL:		http://search.cpan.org/~doy/Eval-Closure/
+Source0:	http://search.cpan.org/CPAN/authors/id/D/DO/DOY/%{modname}-%{modver}.tar.gz
 BuildRequires:	perl(Sub::Exporter)
 BuildRequires:	perl(Test::Fatal)
 BuildRequires:	perl(Test::Requires)
@@ -32,7 +32,7 @@ string to be evaled, so it must also be the same (or non-existent) if caching
 is to work properly).
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{modname}-%{modver}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
@@ -49,8 +49,10 @@ make test
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
 
-
 %changelog
+* Wed Feb 13 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.80.0-1
+- new version
+
 * Tue Jan 24 2012 Oden Eriksson <oeriksson@mandriva.com> 0.40.0-5mdv2012.0
 + Revision: 767797
 - fix stupid and anal rpmlint enforcements that does not even show in the build system output.
@@ -69,4 +71,3 @@ make test
 * Sat Apr 23 2011 Sandro Cazzaniga <kharec@mandriva.org> 0.40.0-1
 + Revision: 657174
 - import perl-Eval-Closure
-
