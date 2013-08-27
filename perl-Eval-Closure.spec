@@ -1,19 +1,19 @@
 %define	modname	Eval-Closure
 %define	modver	0.08
 
+Summary:	Safely and cleanly create closures via string eval
 Name:		perl-%{modname}
 Version:	%{perl_convert_version %{modver}}
 Release:	2
-Summary:	Safely and cleanly create closures via string eval
-License:	GPL+ or Artistic
+License:	GPLv2+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/~doy/Eval-Closure/
+Url:		http://search.cpan.org/~doy/Eval-Closure/
 Source0:	http://search.cpan.org/CPAN/authors/id/D/DO/DOY/%{modname}-%{modver}.tar.gz
+BuildArch:	noarch
 BuildRequires:	perl(Sub::Exporter)
 BuildRequires:	perl(Test::Fatal)
 BuildRequires:	perl(Test::Requires)
 BuildRequires:	perl-devel
-BuildArch:	noarch
 
 %description
 String eval is often used for dynamic code generation. For instance, Moose uses
@@ -32,7 +32,7 @@ string to be evaled, so it must also be the same (or non-existent) if caching
 is to work properly).
 
 %prep
-%setup -q -n %{modname}-%{modver}
+%setup -qn %{modname}-%{modver}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
@@ -46,28 +46,6 @@ make test
 
 %files
 %doc LICENSE MANIFEST README Changes
-%{_mandir}/man3/*
 %{perl_vendorlib}/*
+%{_mandir}/man3/*
 
-%changelog
-* Wed Feb 13 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.80.0-1
-- new version
-
-* Tue Jan 24 2012 Oden Eriksson <oeriksson@mandriva.com> 0.40.0-5mdv2012.0
-+ Revision: 767797
-- fix stupid and anal rpmlint enforcements that does not even show in the build system output.
-- rebuilt for perl-5.14.2
-- rebuilt for perl-5.14.x
-
-* Sat Apr 23 2011 Sandro Cazzaniga <kharec@mandriva.org> 0.40.0-3
-+ Revision: 657320
-- bump rel
-- re-add buildarch
-
-* Sat Apr 23 2011 Sandro Cazzaniga <kharec@mandriva.org> 0.40.0-2
-+ Revision: 657314
-- drop noarch tag
-
-* Sat Apr 23 2011 Sandro Cazzaniga <kharec@mandriva.org> 0.40.0-1
-+ Revision: 657174
-- import perl-Eval-Closure
