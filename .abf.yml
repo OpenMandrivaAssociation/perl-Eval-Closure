@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   Eval-Closure-0.08.tar.gz: 29ef8dcde6a99de3ed8617ef2e5bf30d5b9eded1
+sources:
+  Eval-Closure-0.11.tar.gz: 95bc949c9a7e1e67a46585a2511b8fcd1e1c1c49
