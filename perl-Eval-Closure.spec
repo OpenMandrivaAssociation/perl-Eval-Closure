@@ -3,7 +3,7 @@
 
 Name:		perl-%{modname}
 Version:	%{perl_convert_version %{modver}}
-Release:	2
+Release:	3
 Summary:	Safely and cleanly create closures via string eval
 License:	GPL+ or Artistic
 Group:		Development/Perl
