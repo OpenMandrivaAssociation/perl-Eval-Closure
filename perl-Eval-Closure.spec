@@ -1,14 +1,14 @@
 %define	modname	Eval-Closure
-%define modver 0.11
+%define modver 0.12
 
 Summary:	Safely and cleanly create closures via string eval
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	5
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/~doy/Eval-Closure/
-Source0:	http://www.cpan.org/authors/id/D/DO/DOY/Eval-Closure-%{modver}.tar.gz
+Source0:	http://search.cpan.org/CPAN/authors/id/D/DO/DOY/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Sub::Exporter)
 BuildRequires:	perl(Test::Fatal)
@@ -35,7 +35,7 @@ is to work properly).
 %setup -qn %{modname}-%{modver}
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
@@ -48,5 +48,3 @@ make test
 %doc LICENSE MANIFEST README Changes
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
-
-
