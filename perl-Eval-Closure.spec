@@ -4,7 +4,7 @@
 Summary:	Safely and cleanly create closures via string eval
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	1
+Release:	2
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/~doy/Eval-Closure/
