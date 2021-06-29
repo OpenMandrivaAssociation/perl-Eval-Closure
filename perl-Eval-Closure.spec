@@ -4,7 +4,7 @@
 Summary:	Safely and cleanly create closures via string eval
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	3
+Release:	4
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://metacpan.org/pod/Eval::Closure
@@ -32,7 +32,7 @@ string to be evaled, so it must also be the same (or non-existent) if caching
 is to work properly).
 
 %prep
-%setup -qn %{modname}-%{modver}
+%autosetup -p1 -n %{modname}-%{modver}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
