@@ -7,7 +7,7 @@ Version:	%perl_convert_version %{modver}
 Release:	7
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://metacpan.org/pod/Eval::Closure
+Url:		https://metacpan.org/pod/Eval::Closure
 Source0:	http://www.cpan.org/authors/id/D/DO/DOY/Eval-Closure-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Sub::Exporter)
